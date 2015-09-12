@@ -1,14 +1,10 @@
 {
-  "name": "react",
+  "name": "react-tute",
   "version": "1.0.0",
-  "description": "rect attempts",
-  "main": "index.js",
+  "description": "my rect attempts and tutorials",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "@sbmadhav",
-  "license": "MIT",
-  "devDependencies": {
-    "serve": "^1.4.0"
-  }
+  "author": "Brameshmadhav S (@sbmadhav)",
+  "license": "MIT"
 }
