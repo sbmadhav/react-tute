@@ -7,39 +7,36 @@
     <div id="target"></div>
     <script src="https://fb.me/react-0.13.3.js"></script>
     <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+    <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type="text/jsx">
-    var Model = {
-      title : 'React',
-      content : 'React V0.13',
-      frameworks : [ 'Angular' , 'Knockout' , 'Ember' ]
-    } 
-    var Framework = React.createClass ( {
-      render: function() {
-        return (
-          <li> { this.props.title } </li>
-        );
+    
+    var ComponentA = {
+      componentDidUpdate : function  () {
+        $( this.getDOMNode() ).slideUp().slideDown();
       }
-    } );
-    var MyComponent = React.createClass( {
+    };
+    var ComponentB = React.createClass ( {
+      getInitialState : function  () {
+        var state = { counter : 1 };
+
+        setInterval( function(){
+          this.setState( { counter: ++this.state.counter } );
+        }.bind( this ) , 3000 )
+
+        return state;
+      },
+
       render: function() {
         return (
           <div>
-            <h1> { this.props.data.title } </h1>
-            <p> { this.props.data.content } </p>
-            <h2> Frameworks </h2>
-            <ul>
-              { 
-                this.props.data.frameworks.map( function( framework ) {
-                  return <Framework title = { framework } />
-                } ) 
-              }
-            </ul>
+            <h1>Counter</h1>
+            <p> { this.state.counter } </p>
           </div>
         );
-      }
-    } );
-    React.render( <MyComponent data = { Model }/> , document.getElementById("target") );
-
+      },
+      mixins : [ ComponentA ]
+    } ); 
+    React.render( <ComponentB /> , document.getElementById("target") );
     </script>
   </body>
 </html>
