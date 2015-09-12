@@ -13,7 +13,13 @@
       content : 'React V0.13',
       frameworks : [ 'Angular' , 'Knockout' , 'Ember' ]
     } 
-    
+    var Framework = React.createClass ( {
+      render: function() {
+        return (
+          <li> { this.props.title } </li>
+        );
+      }
+    } );
     var MyComponent = React.createClass( {
       render: function() {
         return (
@@ -21,11 +27,13 @@
             <h1> { this.props.data.title } </h1>
             <p> { this.props.data.content } </p>
             <h2> Frameworks </h2>
-            { 
-              this.props.data.frameworks.map( function( framework ) {
-                return <li> {framework} </li>
-              } ) 
-            }
+            <ul>
+              { 
+                this.props.data.frameworks.map( function( framework ) {
+                  return <Framework title = { framework } />
+                } ) 
+              }
+            </ul>
           </div>
         );
       }
