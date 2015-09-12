@@ -9,9 +9,15 @@
     <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
     <script type="text/jsx">
     var Button = React.createClass({
-      
+      click : function () {
+
+        this.props.click(this.props.add);
+
+      },
       render : function  () {
-        return ( <button onClick = { this.props.click }> Count  = { this.props.count } </button> )
+
+        return ( <button onClick = { this.click }>Increment by { this.props.add } </button> )
+
       }
     });
     var Message = React.createClass({
@@ -19,22 +25,28 @@
       render : function  () {
         return <div>
           <h1> Hello { this.props.msg1 }</h1>
-          
+          <h2>Count  = { this.props.count }</h2>
         </div>
       }
+      
     });
     var Main = React.createClass({
       getInitialState: function () {
         return { count: 0 }
       },
-      click : function () {
-        this.setState( { count: ++this.state.count } );
+      click : function (add) {
+        this.setState( { count: this.state.count + add } );
+      },
+      addCount: function(e){
+        this.setState( { count: this.state.count + e.target.value } );  
       },
       render: function() {
         return (
           <div>
-            <Button count = { this.state.count } click = { this.click }/>
-            <Message msg1 = { new Date().toString() } /> 
+            <Button click = { this.click } add={ 5 } />
+            <Button click = { this.click } add={ 10 } />
+            <Button click = { this.click } add={ 15 } />
+            <Message count = { this.state.count } msg1 = { new Date().toString() } /> 
           </div>
         );
       }
