@@ -1,0 +1,14 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "rect attempts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@sbmadhav",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^1.4.0"
+  }
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>React Tutorial</title>
+  </head>
+  <body>
+    <div id="target"></div>
+    <script src="https://fb.me/react-0.13.3.js"></script>
+    <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+    <script type="text/jsx">
+    var Button = React.createClass({
+      render : function  () {
+        return ( <button>Button</button> )
+      }
+    });
+    var Message = React.createClass({
+
+      render : function  () {
+        return <div>
+          <h1> Hello {this.props.msg1}</h1>
+          <Button/>
+        </div>
+      }
+    });
+    React.render( <Message msg1= { new Date().toString() } /> , document.getElementById("target") );
+    </script>
+  </body>
+</html>
