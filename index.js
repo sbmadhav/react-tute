@@ -3,7 +3,7 @@
 var Text = React.createClass ( {
 
   render: function() {
-    return React.createElement('p', null, this.props.content)
+    return React.DOM.p(null, this.props.content)
   }
 
 } );
