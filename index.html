@@ -8,45 +8,7 @@
     <script src="https://fb.me/react-0.13.3.js"></script>
     <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
     <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script type="text/jsx">
-    
-    var ComponentA = {
-      componentDidUpdate : function  () {
-        console.log ( 'A' );
-      }
-    };
-
-    var ComponentC = {
-      componentDidUpdate : function  () {
-        console.log ( 'C' );
-      }
-    };
-
-    var ComponentB = React.createClass ( {
-      componentDidUpdate : function  () {
-        console.log ( 'B' );
-      },
-      getInitialState : function  () {
-        var state = { counter : 1 };
-
-        setInterval( function(){
-          this.setState( { counter: ++this.state.counter } );
-        }.bind( this ) , 3000 )
-
-        return state;
-      },
-
-      render: function() {
-        return (
-          <div>
-            <h1>Counter</h1>
-            <p> { this.state.counter } </p>
-          </div>
-        );
-      },
-      mixins : [ ComponentA , ComponentC ]
-    } ); 
-    React.render( <ComponentB /> , document.getElementById("target") );
-    </script>
+    <!-- the below script needs to be of type text/jsx, the jsx compiler uses this to understand that the src is a jsx file, the extn of the file does not matter-->
+    <script type="text/jsx" src="index.jsx"></script>
   </body>
 </html>
