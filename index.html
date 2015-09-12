@@ -12,10 +12,20 @@
     
     var ComponentA = {
       componentDidUpdate : function  () {
-        $( this.getDOMNode() ).slideUp().slideDown();
+        console.log ( 'A' );
       }
     };
+
+    var ComponentC = {
+      componentDidUpdate : function  () {
+        console.log ( 'C' );
+      }
+    };
+
     var ComponentB = React.createClass ( {
+      componentDidUpdate : function  () {
+        console.log ( 'B' );
+      },
       getInitialState : function  () {
         var state = { counter : 1 };
 
@@ -34,7 +44,7 @@
           </div>
         );
       },
-      mixins : [ ComponentA ]
+      mixins : [ ComponentA , ComponentC ]
     } ); 
     React.render( <ComponentB /> , document.getElementById("target") );
     </script>

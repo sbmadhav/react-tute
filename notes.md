@@ -23,5 +23,5 @@ Components States are chanegd
 Component is removed
 	- componentWillUnmount
 
-
-After Virtual DOM -> DOM update happens the 'will' methods execute
+ 
+After Virtual DOM -> DOM update during the render method execution ?
