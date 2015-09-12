@@ -9,12 +9,9 @@
     <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
     <script type="text/jsx">
     var Button = React.createClass({
-      click : function () {
-        this.props.count ++;
-        this.props.updateState(this.props.count);
-      },
+      
       render : function  () {
-        return ( <button onClick = { this.click }> Count  = { this.props.count } </button> )
+        return ( <button onClick = { this.props.click }> Count  = { this.props.count } </button> )
       }
     });
     var Message = React.createClass({
@@ -30,13 +27,13 @@
       getInitialState: function () {
         return { count: 0 }
       },
-      updateState: function (val) {
-        this.setState({count: val});
+      click : function () {
+        this.setState( { count: ++this.state.count } );
       },
       render: function() {
         return (
           <div>
-            <Button count = { this.state.count } updateState = { this.updateState } />
+            <Button count = { this.state.count } click = { this.click }/>
             <Message msg1 = { new Date().toString() } /> 
           </div>
         );
