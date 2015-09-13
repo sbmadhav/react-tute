@@ -12,7 +12,7 @@ var ContainerComponent = React.createClass( {
     return (
       <div className = '' >
       <InputBox setValue = { this.linkState( 'name' ) } />
-        <h4>{ this.state.name }</h4>
+      <h4>{ this.state.name }</h4>
       </div>
     );
   }

@@ -25,3 +25,9 @@ Component is removed
 
  
 After Virtual DOM -> DOM update during the render method execution ?
+
+Command to generate the output js from a jsx :
+
+ jsx --follows-requires -x jsx ./ compiled
+
+ Learn more attirbs
