@@ -2,13 +2,13 @@
 /**@jsx React.DOM */
 
 var GitHubProfile = React.createClass( {
-  getInitialState: function  () {
+  getInitialState: function() {
     return {};
   },
 
-  componentDidMount: function  () {
+  componentDidMount: function() {
     var self = this;
-    $.get( 'https://api.github.com/users/' + this.props.login , function  ( data ) {
+    $.get( 'https://api.github.com/users/' + this.props.login , function( data ) {
 
       self.setState( data );
 
@@ -28,7 +28,7 @@ var GitHubProfile = React.createClass( {
 
 var Form = React.createClass( {
 
-  onSubmit : function  ( e ) {
+  onSubmit : function( e ) {
     e.preventDefault();
     var loginInput = React.findDOMNode( this.refs.login );
     this.props.addGitHubProfile( loginInput.value );
@@ -48,16 +48,16 @@ var Form = React.createClass( {
 
 var Main = React.createClass( {
 
-  getInitialState: function  () {
+  getInitialState: function() {
     return { logins: [] };
   },
 
-  addGitHubProfile : function  ( login ) {
+  addGitHubProfile : function( login ) {
     this.setState( { logins: this.state.logins.concat( login ) } );
   },
 
   render: function() {
-    var githubprofiles = this.state.logins.map( function  ( login ) {
+    var githubprofiles = this.state.logins.map( function( login ) {
       return ( <GitHubProfile login = { login } /> );
     });
     return (
