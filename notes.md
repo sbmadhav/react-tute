@@ -31,3 +31,5 @@ Command to generate the output js from a jsx :
  jsx --follows-requires -x jsx ./ compiled
 
  Learn more attirbs
+
+ Controlled component vs Uncontrolled component ?  If the state is propagated via react comps then it is controlled else it is not .?

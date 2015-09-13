@@ -5,12 +5,11 @@ var FormComponent = React.createClass( {
     return { init: '' };
   },
   handleChangeEvent: function( e ){
-    this.setState( { init : e.target.value } );
-    // console.log( e.target.value );
+    console.log( e.target.value );
   },
   render: function() {
     return (
-      <input type = 'text' onChange = { this.handleChangeEvent } value = { this.state.init } placeholder = 'Type some text'/>
+      <input type = 'text' onChange = { this.handleChangeEvent } defaultValue = 'init' placeholder = 'Type some text'/>
     );
   }
 
